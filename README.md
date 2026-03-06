@@ -1,4 +1,4 @@
-# Next.js Webinar Module
+# V-Verse Webinar Module
 
 This repository showcases my work on **the architecture and core frontend logic of the Webinar module**, developed as part of the **V-Verse SaaS platform**—a multi-module application with 15 product modules.
 
