@@ -1,12 +1,14 @@
-# Next.js Webinar Platform Demo
+# Next.js Webinar Module
 
-This repository demonstrates the architecture and core frontend logic behind a webinar platform supporting multiple webinar types, real-time interactions, and automated video sessions.
+This repository showcases the **architecture and core frontend logic of the Webinar module** developed as part of the **V-Verse SaaS platform**, a multi-module application containing more than 15 product modules.
 
-The system is inspired by production experience building webinar modules in a large SaaS application.
+The purpose of this repository is to demonstrate the **technical design, architecture patterns, and implementation approach** used to build a production-level webinar system supporting multiple webinar types, synchronized video sessions, and real-time attendee interactions. It is intended to give recruiters and engineers clear insight into how complex frontend systems are structured and implemented in a real-world SaaS environment.
+
+---
 
 ## Features
 
-- Webinar creation with multiple types:
+- Webinar creation supporting multiple types:
   - Live
   - Automated
   - Hybrid
@@ -17,50 +19,65 @@ The system is inspired by production experience building webinar modules in a la
 
 - Real-time polls with live percentage updates
 
-- Real-time chat
+- Real-time chat between attendees
 
 - Dynamic offers displayed during sessions
+
+---
 
 ## Webinar Types
 
 ### Live Webinar
+
 Users are redirected to an external live streaming platform to attend the session.
 
 ### Automated Webinar
-A pre-recorded video uploaded by the host is played automatically at the scheduled time.
+
+A pre-recorded video uploaded by the host is automatically streamed to attendees at the scheduled time.
 
 ### Hybrid Webinar
-Similar to automated webinars but allows the host to participate live while the pre-recorded video is streamed.
+
+A combination of automated video playback and live host interaction, allowing the host to join and engage with attendees while the session runs.
+
+---
 
 ## Key Technical Concepts
 
 ### Video Synchronization
 
-When users join late, the system calculates the current playback position and starts the video from the correct timestamp.
+Attendees joining after the webinar has started are automatically synchronized with the current playback position.
 
-Example logic:
+The system determines the correct video timestamp by:
 
-- Calculate webinar start time
-- Compare with current server time
-- Determine remaining playback duration
+- calculating the elapsed time since the webinar start
+- comparing it with the video duration
+- starting playback from the appropriate timestamp
 
-This ensures all attendees stay synchronized with the session timeline.
+This ensures all participants remain aligned with the session timeline.
+
+---
 
 ### Real-Time Polls
 
-Participants can vote in polls during the webinar and instantly see updated voting percentages.
+Participants can vote in polls during the webinar and instantly see updated results and voting percentages in real time.
+
+---
 
 ### Countdown Waiting Room
 
-Before the webinar begins, attendees are placed in a waiting room with a countdown timer until the session starts.
+Before the webinar begins, attendees enter a waiting room displaying a countdown timer until the scheduled start time.
+
+---
 
 ## Tech Stack
 
-- Next.js
-- TypeScript
-- React
-- Real-time messaging (WebSocket / Firebase / similar)
+- **Next.js**
+- **TypeScript**
+- **React**
+- Real-time messaging (WebSockets / Firebase / similar services)
 
-## Repository Purpose
+---
 
-This repository demonstrates architectural patterns and simplified implementations of core webinar platform features for educational and portfolio purposes.
+## Repository Scope
+
+This repository focuses specifically on the **Webinar module** and demonstrates key architectural patterns, core logic, and interaction flows used to implement this feature within a larger production SaaS platform.
